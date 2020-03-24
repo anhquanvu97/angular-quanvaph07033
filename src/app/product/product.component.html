@@ -1,0 +1,18 @@
+<div class="card h-100">
+    <a href="#"><img class="card-img-top" [src]="product.img" alt=""></a>
+    <div class="card-body">
+    <h4 class="card-title">
+        <a href="#">{{product.name}}</a>
+    </h4>
+    <p>{{fullname}}</p>
+    <h5>${{product.price}}</h5>
+    <p class="card-text">{{product.desc}}</p>
+    <span>{{product.status ? 'con hang' : 'het hang'}}</span>
+
+    </div>
+    <button class="btn btn-primary m-3 d-block" (click)="changeStatus()">Buy now</button>
+    <input type="text" [(ngModel)]="fullname">
+    <div class="card-footer">
+    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div>
+</div>
