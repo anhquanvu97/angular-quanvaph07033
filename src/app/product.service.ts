@@ -7,6 +7,7 @@ import { data } from './MockProduct';
 export class ProductService {
   products = data;
   constructor() { }
+  
   addProduct(product){
     let fakeObj = {id: 6, ...product};
     this.products.push(fakeObj);
