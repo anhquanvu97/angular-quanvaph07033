@@ -19,7 +19,7 @@
       <td>{{product.desc}}</td>
       <td>{{product.status ? 'Available' : 'Sold out'}}</td>
       <td>
-        <button class="btn btn-success">Edit</button>
+        <button class="btn btn-success" routerLink="/product/edit/{{product.id}}" >Edit</button>
         <button class="btn btn-danger" (click)="removeItem(product.id)">Delete</button>
       </td>
     </tr>
