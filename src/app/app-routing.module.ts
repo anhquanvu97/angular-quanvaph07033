@@ -7,10 +7,14 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ManageComponent } from './manage/manage.component';
+import { AboutComponent } from './about/about.component';
+import { ServiceComponent } from './service/service.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent,  data: { animation: 'home' }},
+  { path: 'about', component: AboutComponent},
+  { path: 'service', component: ServiceComponent},
   { path: 'add-product', component: ProductAddComponent},
   { path: 'product/edit/:id', component: ProductEditComponent},
   { path: 'manage', component: ManageComponent},
