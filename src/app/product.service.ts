@@ -17,15 +17,13 @@ export class ProductService {
     this.products.push(fakeObj);
     console.log(this.products);
   }
-  getProducts(id: Number): Observable<Product[]>{
+  getProducts(): Observable<Product[]>{
     return this.http.get<Product[]>(this.products);
-    // const product = this.products.find(product => product.id == id);
-    // console.log(product);
-    // if (product) {
-    //   return product;
-    // } else {
-    //   throw Error('Not Found');
-    // }
-    
+  }
+  getProduct(id: Number): Observable<Product>{
+    return this.http.get<Product>(`${this.products}/${id}`);
+  }
+  editProduct(product): Observable<Product>{
+    return this.http.put<Product>(`${this.products}/${product.id}`, product);
   }
 }

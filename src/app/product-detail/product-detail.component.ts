@@ -20,8 +20,8 @@ export class ProductDetailComponent implements OnInit {
   }
   getProduct(){
     this.route.params.subscribe(data => {
-      let { id } = data;
-      this.product = this.productService.getProduct(id);
+      let { id } = data; 
+      this.productService.getProduct(id).subscribe(data => this.product = data);
     })
     
   }

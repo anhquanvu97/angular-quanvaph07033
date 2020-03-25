@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { data } from '../MockProduct';
 import { Product} from '../Product';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-manage',
@@ -10,11 +11,19 @@ import { Product} from '../Product';
 export class ManageComponent implements OnInit {
 
  products = data;
-  constructor() { }
+  constructor(
+    private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
+    this.getProducts()
   }
-  selected: Product;
+  // selected: Product;
+  getProducts(){
+    this.productService.getProducts().subscribe(response => {
+      this.products = response;
+    });
+  }
 
   removeItem(id){
       this.products = this.products.filter(product => product.id != id);
