@@ -10,7 +10,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductListComponent implements OnInit {
 
-  products = data;
+  products: Product;
   constructor(
     private productService: ProductService
   ) { }

@@ -19,13 +19,13 @@ export class ManageComponent implements OnInit {
     this.getProducts()
   }
   // selected: Product;
+
   getProducts(){
     this.productService.getProducts().subscribe(response => {
       this.products = response;
     });
   }
-
   removeItem(id){
-      this.products = this.products.filter(product => product.id != id);
+      this.products = this.products.filter(funproduct => product.id != id);
   }
 }

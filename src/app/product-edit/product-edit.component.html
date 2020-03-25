@@ -2,7 +2,7 @@
 <form>
   <div class="form-group">
     <label for="">Name</label>
-    <input value="{{product.name}}" type="text" class="form-control" name="name" [(ngModel)]="product.name">
+    <input type="text" class="form-control" name="name" [(ngModel)]="product.name">
   </div>
   <div class="form-group">
     <label for="">Price</label>
@@ -13,5 +13,5 @@
     <input type="text" class="form-control" name="desc" [(ngModel)]="product.desc">
   </div>
 
-  <button type="submit" class="btn btn-primary" (click)="addProduct()">Submit</button>
+  <button type="submit" class="btn btn-primary" (click)="editProduct()">Submit</button>
 </form>

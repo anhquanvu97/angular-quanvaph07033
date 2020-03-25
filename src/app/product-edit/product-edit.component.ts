@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../Product';
 import { ProductService } from '../product.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '../Product';
 
 @Component({
   selector: 'app-product-edit',
@@ -9,7 +9,7 @@ import { Product } from '../Product';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
-product: Product;
+  product: Product;
   constructor(
     private productService: ProductService,
     private route:  ActivatedRoute,
@@ -26,7 +26,8 @@ product: Product;
     })
   }
   editProduct(){
-    console.log(this.product);
-    this.productService.editProduct(this.product).subscribe(() => this.router.navigateByUrl('/product'));
+    // console.log(this.product);
+    this.productService.updateProduct(this.product).subscribe(() => this.router.navigateByUrl('/manage'));
   }
+
 }

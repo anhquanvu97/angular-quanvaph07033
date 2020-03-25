@@ -12,18 +12,16 @@ export class ProductService {
     private http: HttpClient
   ) { }
   
-  addProduct(product){
-    let fakeObj = {id: 6, ...product};
-    this.products.push(fakeObj);
-    console.log(this.products);
-  }
   getProducts(): Observable<Product[]>{
     return this.http.get<Product[]>(this.products);
   }
   getProduct(id: Number): Observable<Product>{
     return this.http.get<Product>(`${this.products}/${id}`);
   }
-  editProduct(product): Observable<Product>{
+  updateProduct(product): Observable<Product>{
     return this.http.put<Product>(`${this.products}/${product.id}`, product);
+  }
+  deleteProduct(id: Number): Observable<Product>{
+    return this.http.delete<Product>(`${this.products}/${id}`);
   }
 }
