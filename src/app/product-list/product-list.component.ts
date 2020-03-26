@@ -25,10 +25,4 @@ export class ProductListComponent implements OnInit {
       this.products = response;
     });
   }
-  removeItem(id){
-      this.products = this.products.filter(product => product.id != id);
-  }
-  detailProduct(product){
-    // this.selected = product;
-  }
 }

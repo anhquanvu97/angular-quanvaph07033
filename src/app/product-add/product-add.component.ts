@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../Product';
 import { ProductService } from '../product.service';
-import { Route } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-product-add',
   templateUrl: './product-add.component.html',
@@ -9,7 +9,6 @@ import { Route } from '@angular/router';
 })
 export class ProductAddComponent implements OnInit {
   product: Product = new Product();
-
   constructor(
     private productService: ProductService,
     private router: Router
@@ -18,8 +17,6 @@ export class ProductAddComponent implements OnInit {
   ngOnInit() {
   }
   addProduct(){
-    this.productService.addProduct(this.product).subscribe(data = {
-      console.log(data);
-    )};
+    this.productService.addProduct(this.product).subscribe(data => this.router.navigateByUrl('/manage'));
   }
 }

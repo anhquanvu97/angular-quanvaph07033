@@ -10,7 +10,7 @@ import { ProductService } from '../product.service';
 })
 export class ManageComponent implements OnInit {
 
- products = data;
+ products: Product[];
   constructor(
     private productService: ProductService
   ) { }
@@ -25,7 +25,9 @@ export class ManageComponent implements OnInit {
       this.products = response;
     });
   }
-  removeItem(id){
-      this.products = this.products.filter(funproduct => product.id != id);
+  deleteProduct(id){
+    this.productService.removeProduct(id).subscribe(response => {
+      this.products = this.products.filter(product => product.id != response.id) ;
+    });
   }
 }

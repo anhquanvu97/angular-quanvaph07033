@@ -15,7 +15,7 @@ export class ProductService {
   getProducts(): Observable<Product[]>{
     return this.http.get<Product[]>(this.products);
   }
-  getProduct(id: Number): Observable<Product>{
+  getProduct(id): Observable<Product>{
     return this.http.get<Product>(`${this.products}/${id}`);
   }
   addProduct(product): Observable<Product>{
@@ -24,7 +24,7 @@ export class ProductService {
   updateProduct(product): Observable<Product>{
     return this.http.put<Product>(`${this.products}/${product.id}`, product);
   }
-  deleteProduct(id: Number): Observable<Product>{
+  removeProduct(id): Observable<Product>{
     return this.http.delete<Product>(`${this.products}/${id}`);
   }
 }
