@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent,  data: { animation: 'home' }},
   { path: 'about', component: AboutComponent},
   { path: 'service', component: ServiceComponent},
-  { path: 'add-product', component: ProductAddComponent},
+  { path: 'product/add', component: ProductAddComponent},
   { path: 'product/edit/:id', component: ProductEditComponent},
   { path: 'manage', component: ManageComponent},
   { path: 'product-list', component: ProductListComponent},
